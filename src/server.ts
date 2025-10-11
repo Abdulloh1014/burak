@@ -1,8 +1,16 @@
-console.log("EXECUTED!");
+// Architectural pattern: MVC, Dependency Injection, MVP
+// Backendni suyagi, backendagi ma'lumotlar oqimini tartibga soladigan vosita. ya'ni arxitektura
 
-import moment from "moment";
-const currentTime = moment().format("YYYY MM DD");
-console.log(currentTime);
+// MVC = MODEL VIEW CONTROLLER
 
-const person: string = "Abdullo";
-const count: number = 100;
+// Design pattern: Middlawere, Decoratos
+// Backendni ma'lum bir bo'laklarini structursini yechishda xizmat qiladigan pattern
+
+
+
+
+import dotenv from 'dotenv';
+dotenv.config();
+
+
+
