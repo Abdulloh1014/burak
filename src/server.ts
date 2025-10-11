@@ -6,7 +6,7 @@
 // Design pattern: Middlawere, Decoratos
 // Backendni ma'lum bir bo'laklarini structursini yechishda xizmat qiladigan pattern
 
-
+// CLUSTER => DATABSE => COLLECTION => DOCUMENT
 
 
 import dotenv from 'dotenv';

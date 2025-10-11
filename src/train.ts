@@ -1,0 +1,2 @@
+console.log("Train ishga tushdi!");
+
