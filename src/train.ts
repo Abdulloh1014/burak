@@ -8,3 +8,4 @@ function getPositive(son: number[]) {
 console.log("Javob:", JSON.stringify(getPositive([1, 7.3, 9, -5, 1.3, 9, -23, 9.1, 4, -12])));
 
 
+
