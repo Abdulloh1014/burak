@@ -1,6 +1,9 @@
 import express from 'express';   // bu serverni quradi
 import path from 'path';   // path (Windows, Linux, macOS) yo‘l formatlari farq qiladi —path moduli bu farqlarni avtomatik hisobga olib, har joyda to‘g‘ri ishlaydigan yo‘l yaratadi.
 import router from "./router"
+import routerAdmin from "./routerAdmin"
+
+
 /**  1-ENTRANSE  **/
 const app = express();
 
@@ -16,5 +19,8 @@ app.set('views', path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /**  4-ROUTERS  **/
-app.use('/', router)     // Middleware Design Pattern
+app.use('/admin', routerAdmin) // EJS
+app.use('/', router)     // REACT. ////. Middleware Design Pattern
+
+
 export default app;
