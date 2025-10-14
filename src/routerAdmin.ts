@@ -1,3 +1,5 @@
+// for ADMIN
+
 import express from "express";
 const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant_controller";
