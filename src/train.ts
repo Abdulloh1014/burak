@@ -28,3 +28,11 @@ console.log("Train ishga tushdi!");
 
    -= Error handling
 */
+
+// Eng ko'p ishlatiladigan API lar
+/**
+ * Traditinal API.      Burakda foydalanamiz
+ * Rest API             Burakda foydalanimiz
+ * GraphQL API
+ * 
+ */
