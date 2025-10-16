@@ -1,4 +1,4 @@
 export interface T {
-    [ket: string] : any;
+    [key: string] : any;
 }
 

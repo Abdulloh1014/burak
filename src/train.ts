@@ -9,11 +9,22 @@ console.log("Train ishga tushdi!");
 
 
 
-function getDigits(son: String) {
-    return son
-    .split('')           // split('') --> stingni harflarga bo'lyabti
-  .filter(r => /\d/.test(r))
-  .join('');
- }
-console.log("Javob:", JSON.stringify(getDigits("a08b87d")));
+// function getDigits(son: String) {
+//     return son
+//     .split('')           // split('') --> stingni xar bir belgiga ajratyabti
+//   .filter(r => /\d/.test(r))
+//   .join('');
+//  }
+// console.log("Javob:", JSON.stringify(getDigits("a08b87d")));
 
+
+/* Project Standards:
+ - Logging standards
+ - Naming standards
+    function, method, variable => CAMEL    =>. goHome
+    class => PASCAL              =>. MemberService
+    folder => KEBAB
+   css => SNAKE                    => button_style
+
+   -= Error handling
+*/
