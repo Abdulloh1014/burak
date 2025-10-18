@@ -36,3 +36,20 @@ console.log("Train ishga tushdi!");
  * GraphQL API
  * 
  */
+
+
+function majorityElement(...arr: number[]): number {
+  const count: Record<number, number> = {};
+  let maxNum = arr[0], maxCount = 0;
+
+  for (const n of arr) {
+    count[n] = (count[n] || 0) + 1;
+    if (count[n] > maxCount) {
+      maxCount = count[n];
+      maxNum = n;
+    }
+  }
+
+  return maxNum;
+}
+console.log("Javob:", majorityElement(4, 7, 22, 5, 1, 7, 9)); 
