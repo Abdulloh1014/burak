@@ -9,13 +9,13 @@ import app from "./app";   // app ni ya'ni express() ni chaqiryabmiz
 
 mongoose     // mongoDB ga ulab beradigon package
   .connect(process.env.MONGO_URL as string, {})      // .env faylga yozilgan MongoDB manzilini olib beryabti
-                                                // ✅ Mongoose — kodni tartibli, xavfsiz va oson boshqariladigan qiladi.
-                                                // ❌ To‘g‘ridan to‘g‘ri ulanish esa tezroq, lekin murakkabroq va xatolarga ochiqroq.
+                                                
     .then((data) => {
     console.log("MongoDB connection succeed");
     const PORT = process.env.PORT ?? 3003;
     app.listen(PORT, function () {    // listen()- serverni ishga tushiradi. Ya’ni u berilgan portni eshitishni boshlaydi va shu portga keladigan so‘rovlarni qabul qiladi.
-        console.log(`The server is running succesfully on port: ${PORT}`);
+        console.info(`The server is running succesfully on port: ${PORT}`);
+        console.info(`Admin project on http://localhost${PORT}/admin \n`);
     });
    })
    
