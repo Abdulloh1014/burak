@@ -65,3 +65,15 @@ console.log("Train ishga tushdi!");
 //   return maxNum;
 // }
 // console.log("Javob:", majorityElement(4, 7, 22, 5, 1, 7, 9)); 
+
+
+
+
+// TASK - J !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+function findLongestWord(soz: String) {
+    const natija = soz.split(' ').reduce((a, b) => (b.length > a.length ? b : a))
+    return natija;
+
+}
+console.log("Javob:", findLongestWord("I came from Uzbekistan!")); 
