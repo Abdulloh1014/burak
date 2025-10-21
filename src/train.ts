@@ -38,18 +38,30 @@ console.log("Train ishga tushdi!");
  */
 
 
-function majorityElement(...arr: number[]): number {
-  const count: Record<number, number> = {};
-  let maxNum = arr[0], maxCount = 0;
 
-  for (const n of arr) {
-    count[n] = (count[n] || 0) + 1;
-    if (count[n] > maxCount) {
-      maxCount = count[n];
-      maxNum = n;
-    }
-  }
+/**
+   Tradition FD --> SSR (ADMIN) --> EJS
+      Modern FD --> SSR (USER) --> REACT
 
-  return maxNum;
-}
-console.log("Javob:", majorityElement(4, 7, 22, 5, 1, 7, 9)); 
+ * 
+ */
+
+
+
+
+
+// function majorityElement(...arr: number[]): number {
+//   const count: Record<number, number> = {};
+//   let maxNum = arr[0], maxCount = 0;
+
+//   for (const n of arr) {
+//     count[n] = (count[n] || 0) + 1;
+//     if (count[n] > maxCount) {
+//       maxCount = count[n];
+//       maxNum = n;
+//     }
+//   }
+
+//   return maxNum;
+// }
+// console.log("Javob:", majorityElement(4, 7, 22, 5, 1, 7, 9)); 
