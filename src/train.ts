@@ -78,9 +78,19 @@ console.log("Train ishga tushdi!");
 
 // TASK - J !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+// function findLongestWord(soz: String) {
+//     const natija = soz.split(' ').reduce((a, b) => (b.length > a.length ? b : a))
+//     return natija;
+
+// }
+// console.log("Javob:", findLongestWord("I came from Uzbekistan!")); 
+
+
+// 
+
+
 function findLongestWord(soz: String) {
-    const natija = soz.split(' ').reduce((a, b) => (b.length > a.length ? b : a))
-    return natija;
+ return (soz.match(/[aeiouAEIOU]/g) || []).length;
 
 }
-console.log("Javob:", findLongestWord("I came from Uzbekistan!")); 
+console.log("Javob:", findLongestWord("Uzbekistan!")); 
