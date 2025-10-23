@@ -7,6 +7,15 @@ import routerAdmin from "./router-admin"
 import morgan from "morgan";
 import {MORGAN_FORMAT} from "./libs/config";
 
+import session from "express-session";
+import ConnectMongoDB from "connect-mongodb-session";
+
+const MongoDBStore = ConnectMongoDB(session);
+const store = new MongoDBStore({
+    uri: String(process.env.MONGO_URL),
+    collection: "session"
+});
+
 /**  1-ENTRANSE  **/
 const app = express();
 
@@ -17,6 +26,19 @@ app.use(morgan(MORGAN_FORMAT));
 
 
 /**  2-SESSION  **/
+
+app.use(
+    session({
+        secret: String(process.env.SESSION_SECRET),
+        cookie: {
+            maxAge: 1000 * 3600 * 6, // 6h foydalanuvchi tizimga kirganda serverda vaqtincha saqlanadigan ma’lumotlar (masalan: login holati, user ID, token va h.k.).
+        },
+        store: store, // yuqoridagi mantiqni kiritganmiz
+        resave: true, // foydalanuvchi oxirgi marta kirgan vaqtidan 6 soat malomotlarini sessionda saqledi
+        saveUninitialized: true,      
+    })
+);
+
 
 /**  3-VIEWS  **/
 app.set('views', path.join(__dirname, "views"));

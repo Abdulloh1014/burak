@@ -24,7 +24,7 @@ class Errors extends Error {
   public code: HttpCode;
   public message: Message;
 
-static standatd = {
+static standart = {
   code: HttpCode.INTERNAL_SERVER_ERROR,
   message: Message.SOMETHING_WENT_WRONG,
 };
