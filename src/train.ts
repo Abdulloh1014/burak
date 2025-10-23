@@ -1,5 +1,12 @@
 console.log("Train ishga tushdi!");
 
+// Authentication — bu **foydalanuvchini kimligini tekshirish jarayoni** (masalan, login orqali).
+// Sessions authentication — bu foydalanuvchi login qilgach, server **sessiyada ma’lumot saqlab**, keyingi so‘rovlarni **shu sessiya orqali tekshirish** usuli.
+
+
+
+
+
 // function getPositive(son: number[]) {
 //     return son
 //   .filter(raqam => raqam > 0 && Number.isInteger(raqam))
