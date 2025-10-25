@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import Errors from "../libs/Error";
 import { T } from "../libs/types/comman";
 import ProductService from "../models/Product.service";
+import { AdminRequest } from "../libs/types/member";
 
 
 const productService = new ProductService();
