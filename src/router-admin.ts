@@ -3,6 +3,7 @@
 import express from "express";
 const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant_controller";
+import productController from "./controllers/product.controller";
 
 
 /** Restaurant Admin pagelari **/
@@ -18,12 +19,17 @@ routerAdmin
   .post("/signup", restaurantController.processSignup);
 
 
-  routerAdmin
-  .get("/logout", restaurantController.logout);
-
+  routerAdmin.get("/logout", restaurantController.logout);
   routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
   /** Product */
+
+routerAdmin.get("/product/all", productController.getAllProducts);
+routerAdmin.post("/product/create", productController.createNewProducts);
+routerAdmin.post("/product/:id", productController.updateChosenroducts);
+
+
+
 /** User */
 
 

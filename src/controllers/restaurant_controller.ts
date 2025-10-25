@@ -48,15 +48,15 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
         console.log("processSignup");
 
 
-        const newMember: MemberInput = req.body;
-        newMember.memberType = MemberType.RESTAURANT;
-        const result = await memberService.processSignup(newMember);
+        const newMember: MemberInput = req.body;      // req.body ichida foydalanuvchidan kelyotgan ma'lumotni olyabti
+        newMember.memberType = MemberType.RESTAURANT;   // A'zoning turini RESTAURANT deb belgilash
+        const result = await memberService.processSignup(newMember);   // Yangi a'zoni ro'yxatdan o'tkazish jarayoni
         // TODO: SESSIONS AUTHENTICATION
 
 
-        req.session.member = result;  // browser cookis ichiga sidni saqlab kelyabti va session collectionga "resualt" ichidagi ma'lumotni saqledi
-        req.session.save(function () {
-            res.send(result);
+        req.session.member = result;  // browser cookis ichiga sidni saqlab kelyabti va session collectionga "result" ichidagi ma'lumotni saqledi
+        req.session.save(function () {     // Sessiyani saqlab qo'yish
+            res.send(result);         // Javob sifatida "result" ni clientga qaytarish
         });
 
 

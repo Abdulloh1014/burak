@@ -29,7 +29,7 @@ app.use(morgan(MORGAN_FORMAT));
 
 app.use(
     session({
-        secret: String(process.env.SESSION_SECRET),
+        secret: String(process.env.SESSION_SECRET),  //sessionlarni  hosil qilishda ishlatiladi
         cookie: {
             maxAge: 1000 * 3600 * 6, // 6h foydalanuvchi tizimga kirganda serverda vaqtincha saqlanadigan ma’lumotlar (masalan: login holati, user ID, token va h.k.).
         },
