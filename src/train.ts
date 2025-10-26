@@ -100,3 +100,17 @@ console.log("Train ishga tushdi!");
 
 // }
 // console.log("Javob:", findLongestWord("Uzbekistan!")); 
+
+
+
+function reverseSentence(soz: String) {
+    const natija = soz
+    .split(' ')
+    .map(gap => gap.split('').reverse().join(''))
+    .join(' ');
+    return natija;
+
+}
+console.log("Javob:", reverseSentence("we like coding")); 
+
+
