@@ -97,14 +97,14 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
     try {
         console.log("logout");
 
-        req.session.destroy(function () {
+        req.session.destroy(function () {   // destroy() → sessiyani butunlay yo‘q qiladi (logout).
             res.redirect("/admin");
         })
 
 
     } catch(err) {
         console.log("Error, logout", err);
-       res.redirect("/admin");    // redirect() — foydalanuvchini boshqa URL manzilga yo‘naltiradi.
+       res.redirect("/admin");    // redirect() → foydalanuvchini boshqa sahifaga o‘tkazadi (yo‘naltiradi).
     }
 
 };

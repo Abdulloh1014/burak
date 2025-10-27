@@ -37,13 +37,13 @@ productController.createNewProducts = async (req: Request, res: Response) => {
 };
 
 
-productController.updateChosenroducts = async (req: Request, res: Response) => {
+productController.updateChosenProduct = async (req: Request, res: Response) => {
     try {
         console.log("updateChosenroducts");
 
        
     } catch(err) {
-        console.log("Error, updateChosenroducts", err);
+        console.log("Error, updateChosenProduct", err);
         if(err instanceof Errors) res.status(err.code).json(err);
         else res.status(Errors.standart.code).json(Errors.standart)
     }

@@ -33,12 +33,12 @@ routerAdmin.get("/product/all",
 routerAdmin.post("/product/create", 
   restaurantController.verifyRestaurant, 
   // uploadProductImage.single('productImage'),
-  makeUploader("products").array("productImage", 5),
+  makeUploader("products").array("productImages", 5),
   productController.createNewProducts);
 
 routerAdmin.post("/product/:id", 
   restaurantController.verifyRestaurant,
-  productController.updateChosenroducts);
+  productController.updateChosenProduct);
 
 
 
