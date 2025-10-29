@@ -103,14 +103,23 @@ console.log("Train ishga tushdi!");
 
 
 
-function reverseSentence(soz: String) {
-    const natija = soz
-    .split(' ')
-    .map(gap => gap.split('').reverse().join(''))
-    .join(' ');
-    return natija;
+// function reverseSentence(soz: String) {
+//     const natija = soz
+//     .split(' ')
+//     .map(gap => gap.split('').reverse().join(''))
+//     .join(' ');
+//     return natija;
 
+// }
+// console.log("Javob:", reverseSentence("we like coding")); 
+
+
+
+// TASK - M !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+function getSquareNumbers(son: number[]) {
+    return son.map(r => ({ number: r, square: r ** 2 }));
 }
-console.log("Javob:", reverseSentence("we like coding")); 
+console.log("Javob:", JSON.stringify(getSquareNumbers([9, 5, 2, 4, 7])));
 
 
