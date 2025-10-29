@@ -5,7 +5,7 @@ import { T } from "../libs/types/comman";
 import MemberService from "../models/Member.service";
 import { AdminRequest, MemberInput, LoginInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, { HttpCode, Message } from "../libs/Error";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 
 const memberService = new MemberService();
 
@@ -52,7 +52,7 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
                 throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG)
        
         const newMember: MemberInput = req.body;      // req.body ichida foydalanuvchidan kelyotgan ma'lumotni olyabti
-       newMember.memberImage = file?.path;
+       newMember.memberImage = file?.path.replace(/\\/g, "/");
         newMember.memberType = MemberType.RESTAURANT;   // A'zoning turini RESTAURANT deb belgilash
         const result = await memberService.processSignup(newMember);   // Yangi a'zoni ro'yxatdan o'tkazish jarayoni
         // TODO: SESSIONS AUTHENTICATION

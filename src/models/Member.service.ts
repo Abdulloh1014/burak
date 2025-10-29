@@ -3,7 +3,7 @@
 
 import MemberModel from "../schema/Member.model";
 import { Member, MemberInput, LoginInput } from "../libs/types/member";
-import Errors, { HttpCode, Message} from "../libs/Error";
+import Errors, { HttpCode, Message} from "../libs/Errors";
 import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 
