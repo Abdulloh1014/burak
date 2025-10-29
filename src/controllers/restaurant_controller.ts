@@ -5,7 +5,7 @@ import { T } from "../libs/types/comman";
 import MemberService from "../models/Member.service";
 import { AdminRequest, MemberInput, LoginInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, { Message } from "../libs/Error";
+import Errors, { HttpCode, Message } from "../libs/Error";
 
 const memberService = new MemberService();
 
@@ -46,9 +46,13 @@ restaurantController.getLogin = (req: Request, res: Response) => {
 restaurantController.processSignup = async (req: AdminRequest, res: Response) => {
     try {
         console.log("processSignup");
-
-
+            const file = req.file;
+            console.log(file)
+            if (!file)
+                throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG)
+       
         const newMember: MemberInput = req.body;      // req.body ichida foydalanuvchidan kelyotgan ma'lumotni olyabti
+       newMember.memberImage = file?.path;
         newMember.memberType = MemberType.RESTAURANT;   // A'zoning turini RESTAURANT deb belgilash
         const result = await memberService.processSignup(newMember);   // Yangi a'zoni ro'yxatdan o'tkazish jarayoni
         // TODO: SESSIONS AUTHENTICATION
@@ -56,7 +60,7 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
 
         req.session.member = result;  // browser cookis ichiga sidni saqlab kelyabti va session collectionga "result" ichidagi ma'lumotni saqledi
         req.session.save(function () {     // Sessiyani saqlab qo'yish
-            res.send(result);         // Javob sifatida "result" ni clientga qaytarish
+            res.redirect("/admin/product/all");      // Javob sifatida "result" ni clientga qaytarish
         });
 
 
@@ -66,14 +70,14 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
          const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
         res.send(`<script> alert("${message}"); window.location.replace('admin/signup') </script>`);
 
-        res.send(err);
+        //res.send(err);
     }
 };
 
 restaurantController.processLogin = async (req: AdminRequest, res: Response) => {
     try {
         console.log("processLogin");
-
+     
 
         const input: LoginInput = req.body
         const result = await memberService.processLogin(input);
@@ -81,7 +85,7 @@ restaurantController.processLogin = async (req: AdminRequest, res: Response) => 
 
         req.session.member = result;  
         req.session.save(function () {
-            res.send(result);
+         res.redirect("/admin/product/all"); 
         });
     } catch(err) {
         console.log("Error, processLogin", err);

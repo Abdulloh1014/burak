@@ -10,7 +10,7 @@ const productSchema = new Schema({
   },
   productCollection: {
     type: String,
-    enum: Object.values(ProductCollection),
+    enum: ProductCollection,
     required: true,
   },
   productName: {
@@ -27,7 +27,7 @@ const productSchema = new Schema({
   },
   productSize: {
     type: String,
-    enum: Object.values(ProductSize),
+    enum: ProductSize,
     default: ProductSize.NORMAL,
   },
   productVolume: {

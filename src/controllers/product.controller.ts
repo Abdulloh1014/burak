@@ -24,7 +24,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
 };
 
 
-productController.createNewProducts = async (req: Request, res: Response) => {
+productController.createNewProduct = async (req: Request, res: Response) => {
     try {
         console.log("createNewProducts");
         res.send("DONE!");
