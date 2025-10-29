@@ -120,6 +120,6 @@ console.log("Train ishga tushdi!");
 function getSquareNumbers(son: number[]) {
     return son.map(r => ({ number: r, square: r ** 2 }));
 }
-console.log("Javob:", JSON.stringify(getSquareNumbers([9, 5, 2, 4, 7])));
+console.log("Javob:", JSON.stringify(getSquareNumbers([9, 5, 2, 4, 3, 7])));
 
 
