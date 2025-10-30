@@ -117,9 +117,18 @@ console.log("Train ishga tushdi!");
 
 // TASK - M !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-function getSquareNumbers(son: number[]) {
-    return son.map(r => ({ number: r, square: r ** 2 }));
-}
-console.log("Javob:", JSON.stringify(getSquareNumbers([9, 5, 2, 4, 3, 7])));
+// function getSquareNumbers(son: number[]) {
+//     return son.map(r => ({ number: r, square: r ** 2 }));
+// }
+// console.log("Javob:", JSON.stringify(getSquareNumbers([9, 5, 2, 4, 3, 7])));
 
 
+
+
+// TASK - N !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+function palindromCheck(soz: string) {
+  return soz === soz.split('').reverse().join('');
+};
+console.log(palindromCheck("aka"));  
+console.log(palindromCheck("uka"));  
