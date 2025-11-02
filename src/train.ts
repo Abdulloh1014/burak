@@ -1,8 +1,46 @@
 console.log("Train ishga tushdi!");
 
+
+/* Project Standards:
+ - Logging standards
+ - Naming standards
+    function, method, variable.    =>  CAMEL    =>. goHome
+    class => PASCAL                =>. MemberService
+    folder => KEBAB
+   css => SNAKE                    => button_style
+
+   -= Error handling
+*/
+
+
 // Authentication — bu **foydalanuvchini kimligini tekshirish jarayoni** (masalan, login orqali).
 // Sessions authentication — bu foydalanuvchi login qilgach, server **sessiyada ma’lumot saqlab**, keyingi so‘rovlarni **shu sessiya orqali tekshirish** usuli.
 
+
+
+
+
+
+
+// Request API 
+/**
+ * Traditinal API.      Burakda foydalanamiz
+ * Rest API             Burakda foydalanimiz
+ * GraphQL API
+ 
+ */
+
+/**
+   Tradition FD --> SSR (ADMIN) --> EJS
+      Modern FD --> SSR (USER) --> REACT
+ */
+
+
+/**
+ *  Cookies:
+ * request join
+ * self deestroy
+ */
 
 /**
  * Validation: 
@@ -13,34 +51,7 @@ console.log("Train ishga tushdi!");
 
 
 
-
-/* Project Standards:
- - Logging standards
- - Naming standards
-    function, method, variable => CAMEL    =>. goHome
-    class => PASCAL              =>. MemberService
-    folder => KEBAB
-   css => SNAKE                    => button_style
-
-   -= Error handling
-*/
-
-// Eng ko'p ishlatiladigan API lar
-/**
- * Traditinal API.      Burakda foydalanamiz
- * Rest API             Burakda foydalanimiz
- * GraphQL API
- * 
- */
-
-
-
-/**
-   Tradition FD --> SSR (ADMIN) --> EJS
-      Modern FD --> SSR (USER) --> REACT
-
- * 
- */
+// ====================================== TASK ===============================================
 
 
 // function getPositive(son: number[]) {
