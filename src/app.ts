@@ -21,8 +21,8 @@ const store = new MongoDBStore({
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));   // `join()` — bir nechta yo‘l qismlarini (masalan, papka nomlari) bitta to‘liq yo‘lga birlashtiradi \\\ __dirname — joriy papka manzili  
-app.use(express.urlencoded({extended: true}));    // urlencoded() — forma orqali kelgan ma’lumotlarni o‘qiydi  \\\ murakkab ma’lumotlarni ham o‘qishga imkon beradi  
-app.use(express.json());   // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
+app.use(express.urlencoded({extended: true}));   // Tradition API ga hizmat qiladi.     // urlencoded() — forma orqali kelgan ma’lumotlarni o‘qiydi  \\\ murakkab ma’lumotlarni ham o‘qishga imkon beradi  
+app.use(express.json());                         // Rect API ga hizmat qiladi.         // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
 app.use(morgan(MORGAN_FORMAT));
 
 
