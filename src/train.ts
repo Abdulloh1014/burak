@@ -138,8 +138,22 @@ console.log("Train ishga tushdi!");
 
 // TASK - N !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-function palindromCheck(soz: string) {
-  return soz === soz.split('').reverse().join('');
-};
-console.log(palindromCheck("aka"));  
-console.log(palindromCheck("uka"));  
+// function palindromCheck(soz: string) {
+//   return soz === soz.split('').reverse().join('');
+// };
+// console.log(palindromCheck("aka"));  
+// console.log(palindromCheck("uka"));  
+
+
+
+// TASK - O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+function calculateSumOfNumbers(son: any[]): number {
+    return son.reduce((sum, item) => 
+        typeof item === "number" ? sum + item : sum
+    , 0);
+}
+
+console.log("Javob:",calculateSumOfNumbers([17, "10", {son: 11}, true, 35])); 
