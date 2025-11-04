@@ -22,8 +22,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));   // `join()` — bir nechta yo‘l qismlarini (masalan, papka nomlari) bitta to‘liq yo‘lga birlashtiradi \\\ __dirname — joriy papka manzili  
 app.use(express.urlencoded({extended: true}));   // Tradition API ga hizmat qiladi.     // urlencoded() — forma orqali kelgan ma’lumotlarni o‘qiydi  \\\ murakkab ma’lumotlarni ham o‘qishga imkon beradi  
-app.use(express.json());                         // Rect API ga hizmat qiladi.         // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
-app.use(morgan(MORGAN_FORMAT));
+app.use(express.json());                         // Rest. API. React API ga hizmat qiladi.         // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
+app.use(morgan(MORGAN_FORMAT));     // formatini (metod, URL, vaqt va h.k.) ko‘rsatadi.       
 
 
 /**  2-SESSION  **/
@@ -36,7 +36,9 @@ app.use(
         },
         store: store, // yuqoridagi mantiqni kiritganmiz
         resave: true, // foydalanuvchi oxirgi marta kirgan vaqtidan 6 soat malomotlarini sessionda saqledi
-        saveUninitialized: true,      
+        saveUninitialized: true,      //. yangi, hali to‘ldirilmagan sessiyalarni ham saqlaydi.
+
+
     })
 );
 

@@ -27,7 +27,7 @@ routerAdmin
   /** Product */
 
 routerAdmin.get("/product/all", 
-  restaurantController.verifyRestaurant,
+  restaurantController.verifyRestaurant,    
   productController.getAllProducts);
 
 routerAdmin.post("/product/create", 
