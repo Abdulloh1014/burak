@@ -150,10 +150,22 @@ console.log("Train ishga tushdi!");
 
 
 
-function calculateSumOfNumbers(son: any[]): number {
-    return son.reduce((sum, item) => 
-        typeof item === "number" ? sum + item : sum
-    , 0);
+// function calculateSumOfNumbers(son: any[]): number {
+//     return son.reduce((sum, item) => 
+//         typeof item === "number" ? sum + item : sum
+//     , 0);
+// }
+
+// console.log("Javob:",calculateSumOfNumbers([17, "10", {son: 11}, true, 35])); 
+
+
+
+// TASK - P !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+function objectToArray(son: {a: number, b: number, c: number}) {
+     return Object.entries(son)
 }
 
-console.log("Javob:",calculateSumOfNumbers([17, "10", {son: 11}, true, 35])); 
+console.log(objectToArray({a: 99, b: 11, c: 55}))
+
