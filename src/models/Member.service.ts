@@ -4,7 +4,7 @@
 import MemberModel from "../schema/Member.model";
 import { Member, MemberInput, LoginInput, MemberUpdateInput } from "../libs/types/member";
 import Errors, { HttpCode, Message} from "../libs/Errors";
-import { MemberType } from "../libs/enums/member.enum";
+import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 import { shapeIntoMongooseObjectId } from "../libs/config";
 
@@ -36,16 +36,21 @@ class MemberService {
   public async Login(input: LoginInput) : Promise<Member> {
     // Foydalanuvchini memberNick bo‘yicha qidirish
      
-    // TODO: Consider member status later
-
     const member = await this.memberModel
     .findOne(
-        {memberNick: input.memberNick},    // database ichida memberNick bilan mos keluvchi foydalanuvchini qidiradi
-        {memberNick: 1, memberPassword: 1}    // faqat memberNick va memberPassword maydonlarini olish (1 = olinsin)
+        {memberNick: input.memberNick, 
+        memberStatus: { $ne: MemberStatus.DELETE},
+        },                                     // database ichida memberNick bilan mos keluvchi foydalanuvchini qidiradi
+        {memberNick: 1, memberPassword: 1, memberStatus: 1}    // faqat memberNick va memberPassword maydonlarini olish (1 = olinsin)
     )  .exec();                              // .exec() queryni bajaradi va natija oladi
        if(!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+      else if(member.memberStatus === MemberStatus.BLOCK) {
+        throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER)
+      }
 
      // Kiritilgan parolni database'dagi parol bilan solishtirish
+
+
     const isMatch = await bcrypt.compare(
         input.memberPassword,    // foydalanuvchi kiritgan parol
         member.memberPassword     // database'dagi hash qilingan parol
