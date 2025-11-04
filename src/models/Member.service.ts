@@ -118,9 +118,9 @@ class MemberService {
  }
 
     public async updateChosenUser(input: MemberUpdateInput): Promise<Member> {
-     input._id = shapeIntoMongooseObjectId(input._id); 
+     input._id = shapeIntoMongooseObjectId(input._id);   // mongodbdan userni id sini olib objectga aylantiryabti
     const result = await this.memberModel
-    .findByIdAndUpdate({ _id: input._id}, input, { new: true })
+    .findByIdAndUpdate({ _id: input._id}, input, { new: true }) //“_id qiymati input._id ga teng bo‘lgan foydalanuvchini top va yangila.”
     .exec();
     
     if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
