@@ -163,9 +163,22 @@ console.log("Train ishga tushdi!");
 // TASK - P !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-function objectToArray(son: {a: number, b: number, c: number}) {
-     return Object.entries(son)
+// function objectToArray(son: {a: number, b: number, c: number}) {
+//      return Object.entries(son)
+// }
+
+// console.log(objectToArray({a: 99, b: 11, c: 55}))
+
+
+
+
+
+// TASK - Q !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+function hasProperty (bir: object, ikki: string) {
+   return  ikki in bir;
 }
 
-console.log(objectToArray({a: 99, b: 11, c: 55}))
-
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));

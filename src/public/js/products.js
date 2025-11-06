@@ -5,18 +5,20 @@ $(function () {
     $(".product-collection").on("change", () => {
         const selectedValue = $(".product-collection").val();
         if(selectedValue === "DRINK") {
-            $("#product-collection").hide();
-            $("#product-volume").show();
+            $("#product-collection").hide();  //`hide()` elementi **ko‘rinmas qilib yashiradi** (display: none qo‘yadi).
+            $("#product-volume").show();      //`show()` — oldin yashirilgan elementni **yana ko‘rsatadi** (display qiymatini tiklaydi).
+
         } else {
-             $("#product-volume").hide();
-            $("#product-collection").show();
+             $("#product-volume").hide();        //`hide()` elementi **ko‘rinmas qilib yashiradi** (display: none qo‘yadi).
+            $("#product-collection").show();     //`show()` — oldin yashirilgan elementni **yana ko‘rsatadi** (display qiymatini tiklaydi).
+
         }
     });
 
 
     $("#process-btn").on("click", () => {
         $(".dish-container").slideToggle(500);
-        $("#process-btn").css("display", "none");
+        $("#process-btn").css("display", "none");    //css() — elementning CSS uslublarini o‘qish yoki o‘zgartirish uchun ishlatiladi.
     });
 
         $("#cancel-btn").on("click", () => {
