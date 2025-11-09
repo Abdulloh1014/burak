@@ -177,8 +177,23 @@ console.log("Train ishga tushdi!");
 
 
 
-function hasProperty (bir: object, ikki: string) {
-   return  ikki in bir;
+// function hasProperty (bir: object, ikki: string) {
+//    return  ikki in bir;
+// }
+
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+
+
+
+
+// TASK - R !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+function calculate (son: string) {
+       return son.split(/[^0-9]+/).filter(Boolean).map(Number).reduce((acc, num) => acc + num)
 }
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+console.log(calculate("55+45"));
+
+// reuslt: 100
+
