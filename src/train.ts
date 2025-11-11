@@ -189,11 +189,20 @@ console.log("Train ishga tushdi!");
 // TASK - R !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-function calculate (son: string) {
-       return son.split(/[^0-9]+/).filter(Boolean).map(Number).reduce((acc, num) => acc + num)
+// function calculate (son: string) {
+//        return son.split(/[^0-9]+/).filter(Boolean).map(Number).reduce((acc, num) => acc + num)
+// }
+
+// console.log(calculate("55+45"));
+
+// // reuslt: 100
+
+
+
+// TASK - S !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+function missingNumber(a: number[]) {
+  return (a.length + 1) * a.length / 2 - a.reduce((s, n) => s + n, 0);
 }
-
-console.log(calculate("55+45"));
-
-// reuslt: 100
-
+console.log(missingNumber([3, 0, 1])); 
