@@ -202,7 +202,33 @@ console.log("Train ishga tushdi!");
 // TASK - S !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-function missingNumber(a: number[]) {
-  return (a.length + 1) * a.length / 2 - a.reduce((s, n) => s + n, 0);
+// function missingNumber(a: number[]) {
+//   return (a.length + 1) * a.length / 2 - a.reduce((s, n) => s + n, 0);
+// }
+// console.log(missingNumber([3, 0, 1])); 
+
+
+
+
+
+
+
+// TASK - T !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+/**TASK T
+
+Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
+Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
+
+MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
+
+Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda. */
+
+function mergeSortedArrays( bir: number[], ikki: number[]): number[] {
+  return [...bir, ...ikki].sort((a, b) => a - b);
 }
-console.log(missingNumber([3, 0, 1])); 
+
+console.log(mergeSortedArrays([4, 7, 41, 1, 9], [22, 3, 67, 8, 10]));
+// result: [1, 3, 4, 7, 8, 9, 10, 22, 41, 67]
+
