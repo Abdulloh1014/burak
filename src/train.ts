@@ -225,10 +225,37 @@ MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30
 
 Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda. */
 
-function mergeSortedArrays( bir: number[], ikki: number[]): number[] {
-  return [...bir, ...ikki].sort((a, b) => a - b);
+// function mergeSortedArrays( bir: number[], ikki: number[]): number[] {
+//   return [...bir, ...ikki].sort((a, b) => a - b);
+// }
+
+// console.log(mergeSortedArrays([4, 7, 41, 1, 9], [22, 3, 67, 8, 10]));
+// // result: [1, 3, 4, 7, 8, 9, 10, 22, 41, 67]
+
+
+
+// TASK - T !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+/**TASK U
+
+Shunday function tuzing, uni number parametri bo'lsin.
+Va bu function berilgan parametrgacha, 0'dan boshlab
+oraliqda nechta toq sonlar borligini aniqlab return qilsi.
+
+MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
+Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud. 
+Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
+
+function sumOdds(n: number): number {
+  return Math.floor(n / 2);
 }
 
-console.log(mergeSortedArrays([4, 7, 41, 1, 9], [22, 3, 67, 8, 10]));
-// result: [1, 3, 4, 7, 8, 9, 10, 22, 41, 67]
+console.log(sumOdds(7));   //  3
+console.log(sumOdds(15));  //  7
+console.log(sumOdds(22));  //  11
+
 
