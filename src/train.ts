@@ -250,12 +250,45 @@ Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
 Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud. 
 Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
 
-function sumOdds(n: number): number {
-  return Math.floor(n / 2);
+// function sumOdds(n: number): number {
+//   return Math.floor(n / 2);
+// }
+
+// console.log(sumOdds(7));   //  3
+// console.log(sumOdds(15));  //  7
+// console.log(sumOdds(22));  //  11
+
+
+// TASK - T !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+// TASK V
+
+// Shunday function yozing, uni string parametri bo'lsin.
+// Va bu function stringdagi har bir harfni o'zi bilan
+// necha marotaba taktorlanganligini ko'rsatuvchi object qaytarsin.
+  
+// MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
+
+// Yuqoridagi misolda, 'hello' so'zi tarkibida
+// qatnashgan harflar necha marotaba takrorlangini bilan
+// object sifatida qaytarilmoqda.
+
+
+function countChars(soz: string): Record<string, number> {
+  let obj: Record<string, number> = {};
+    
+
+  for (let x of soz) {
+    obj[x] = (obj[x] || 0) + 1;
+  }
+
+
+  return obj;
+
 }
 
-console.log(sumOdds(7));   //  3
-console.log(sumOdds(15));  //  7
-console.log(sumOdds(22));  //  11
-
+console.log(countChars("MacBook"))        // result: { M: 1, a: 1, c: 1, B: 1, o: 2, k: 1 }
 
