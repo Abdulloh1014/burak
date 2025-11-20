@@ -5,6 +5,7 @@ import path from 'path';   // path (Windows, Linux, macOS) yo‘l formatlari far
 import router from "./router"
 import routerAdmin from "./router-admin"
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import {MORGAN_FORMAT} from "./libs/config";
 
 import session from "express-session";
@@ -22,7 +23,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));   // `join()` — bir nechta yo‘l qismlarini (masalan, papka nomlari) bitta to‘liq yo‘lga birlashtiradi \\\ __dirname — joriy papka manzili  
 app.use(express.urlencoded({extended: true}));   // Tradition API ga hizmat qiladi.     // urlencoded() — forma orqali kelgan ma’lumotlarni o‘qiydi  \\\ murakkab ma’lumotlarni ham o‘qishga imkon beradi  
-app.use(express.json());                         // Rest. API. React API ga hizmat qiladi.         // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
+app.use(express.json()); 
+app.use(cookieParser());                        // Rest. API. React API ga hizmat qiladi.         // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
 app.use(morgan(MORGAN_FORMAT));     // formatini (metod, URL, vaqt va h.k.) ko‘rsatadi.       
 
 

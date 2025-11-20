@@ -8,6 +8,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
+    "moduleResolution": "node",
     "paths": {
       "*": ["node_modules/*"]
     }
