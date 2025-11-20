@@ -5,9 +5,10 @@ import { T } from "../libs/types/comman"
 import MemberService from "../models/Member.service";
 import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors from "../libs/Errors";
+import AuthService from "../models/Auth.service";
 
 const memberService = new MemberService();
-
+const authService = new AuthService();
 
 // REACT loyihamiz uchun
 
@@ -20,7 +21,9 @@ memberController.Signup = async (req: Request, res: Response) => {
 
         const input: MemberInput = req.body,
          result: Member = await memberService.Signup(input);
-         // TODO: TOKENS AUTHENTICATION
+         const token = await authService.createToken(result);
+        console.log("token:=>", token)
+
 
         res.json({member: result});
     } catch(err) {
@@ -36,7 +39,13 @@ memberController.Login = async (req: Request, res: Response) => {
         console.log("Login");
         const input: LoginInput = req.body,
          result = await memberService.Login(input);
+         const token = await authService.createToken(result);
+         console.log("token:=>", token)
          // TODO: TOKENS AUTHENTICATION
+         
+
+
+
         res.json({member: result});
     } catch(err) {
         console.log("Error, Login", err);

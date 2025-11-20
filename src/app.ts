@@ -54,7 +54,7 @@ app.set("view engine", "ejs");
 
 /**  4-ROUTERS  **/
 app.use('/admin', routerAdmin) //for admin  // EJS
-app.use('/', router)           //for user   // REACT // Middleware Design Pattern
+app.use('/', router)           //for user   // SPA  /  REACT // Middleware Design Pattern
 
 
 export default app;
