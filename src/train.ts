@@ -277,18 +277,36 @@ Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
 // object sifatida qaytarilmoqda.
 
 
-function countChars(soz: string): Record<string, number> {
-  let obj: Record<string, number> = {};
+// function countChars(soz: string): Record<string, number> {
+//   let obj: Record<string, number> = {};
     
 
-  for (let x of soz) {
-    obj[x] = (obj[x] || 0) + 1;
-  }
+//   for (let x of soz) {
+//     obj[x] = (obj[x] || 0) + 1;
+//   }
 
 
-  return obj;
+//   return obj;
 
+// }
+
+// console.log(countChars("MacBook"))        // result: { M: 1, a: 1, c: 1, B: 1, o: 2, k: 1 }
+
+
+
+
+
+// TASK - W !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+function chunkArray ( raqam: number[], uch: number) {
+  const res: number[][] = [];
+  for (let i = 0; i < raqam.length; i += uch) res.push(raqam.slice(i, i + uch));
+  return res;
 }
 
-console.log(countChars("MacBook"))        // result: { M: 1, a: 1, c: 1, B: 1, o: 2, k: 1 }
+console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3))
+
 
