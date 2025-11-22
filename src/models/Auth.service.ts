@@ -2,7 +2,7 @@
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { AUTH_TIMER } from "../libs/config";
 import { Member } from "../libs/types/member"
-import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";        // token yaratish va tekshirish uchun ishlatiladi
 
 
 class AuthService {
@@ -12,13 +12,13 @@ class AuthService {
     }
    
         public async createToken( payload: Member) {
-         return new Promise((resolve, reject) => {
-            const duration = `${AUTH_TIMER}h`;
-             jwt.sign(
+         return new Promise((resolve, reject) => {      // resolve() → hammasi yaxshi bo‘lsa muvaffaqiyatli natija qaytaradi
+            const duration = `${AUTH_TIMER}h`;          // reject() → xatolik bo‘lsa xato qaytaradi
+             jwt.sign(  //sign() → “ma’lumotni olib, JWT tokenga aylantiradi.    // "{ jwt }" token yaratish va tekshirish uchun ishlatiladi
                 payload,
                 process.env.SECRET_TOKEN as string,
                 {
-                    expiresIn: duration,
+                    expiresIn: duration,    // expiresIn — tokenning amal qilish vaqtini belgilaydi.
                 },
                 (err, token) => {
                     if(err) reject(new Errors(HttpCode.UNAUTHORIZED, Message.TOKEN_CREATE_FAILED)
@@ -41,3 +41,4 @@ class AuthService {
 
 
     export default AuthService;
+    

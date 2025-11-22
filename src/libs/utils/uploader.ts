@@ -20,7 +20,7 @@ function getTargetImageStorage(address: any) {
   });
 }
 
-const makeUploader = (address: string) => {
+const makeUploader = (address: string) => {      //makeUploader() — fayl yuklash funksiyasini yaratib beradigan yordamchi
   const storage = getTargetImageStorage(address);
   return multer({ storage: storage });
 };

@@ -38,9 +38,9 @@ class MemberService {
      
     const member = await this.memberModel
     .findOne(
-        {memberNick: input.memberNick, 
-        memberStatus: { $ne: MemberStatus.DELETE},
-        },                                     // database ichida memberNick bilan mos keluvchi foydalanuvchini qidiradi
+        {memberNick: input.memberNick,    // database ichida memberNick bilan mos keluvchi foydalanuvchini qidiradi
+        memberStatus: { $ne: MemberStatus.DELETE},     // $ne → teng emas degani. user databasedan delete bo'lmaganini tekshiradi. 
+        },                                     
         {memberNick: 1, memberPassword: 1, memberStatus: 1}    // faqat memberNick va memberPassword maydonlarini olish (1 = olinsin)
     )  .exec();                              // .exec() queryni bajaradi va natija oladi
        if(!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
@@ -73,6 +73,22 @@ class MemberService {
 
     return result;
   }
+
+
+
+  public async updateMember (
+    member: Member, 
+    input: MemberUpdateInput
+  ): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+    const result = await this.memberModel
+    .findOneAndUpdate({_id: memberId}, input, {new: true})
+    .exec();
+    if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+    return result;
+  }
+
 
 
 
