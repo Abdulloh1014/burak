@@ -301,12 +301,57 @@ Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
 
 
 
-function chunkArray ( raqam: number[], uch: number) {
-  const res: number[][] = [];
-  for (let i = 0; i < raqam.length; i += uch) res.push(raqam.slice(i, i + uch));
-  return res;
+// function chunkArray ( raqam: number[], uch: number) {
+//   const res: number[][] = [];
+//   for (let i = 0; i < raqam.length; i += uch) res.push(raqam.slice(i, i + uch));
+//   return res;
+// }
+
+// console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3))
+
+
+
+
+
+// TASK - X !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// TASK X
+
+// Shunday function yozing, uni object va string parametrlari bo'lsin.
+// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+// necha marotaba takrorlanganlini sanab qaytarsin.
+
+// Eslatma => Nested object'lar ham sanalsin
+
+// MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+// Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+// Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+// tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+
+
+function countOccurrences(obj: any, key: string): number {
+  let c = 0;
+  for (let k in obj) {
+    if (k === key) c++;
+    if (typeof obj[k] === "object") c += countOccurrences(obj[k], key);
+  }
+  return c;
 }
 
-console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3))
+console.log("result:",
+  countOccurrences(
+    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 }, maxSpeed: { model: 280} },
+    "model"
+  )
+);       
+
+
+
+
+   
+
+
+
+
 
 
