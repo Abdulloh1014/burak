@@ -4,6 +4,9 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 import { Product, ProductInput, ProductInquiry, ProductUpdateInput } from "../libs/types/product";
 import ProductModel from "../schema/Product.model";
 import { T } from "../libs/types/comman";
+import { ObjectId} from "mongoose";
+
+
 
 class ProductService {
   private readonly productModel;
@@ -15,7 +18,7 @@ class ProductService {
   /** SPA **/
 
 
-  public async getProduct ( inquiry: ProductInquiry): Promise<Product[]> {
+  public async getProducts ( inquiry: ProductInquiry): Promise<Product[]> {
     const match: T = { productStatus: ProductStatus.PROCESS};
 
     if(inquiry.productCollection)
@@ -42,6 +45,26 @@ class ProductService {
     return result;
   }
 
+
+
+  public async getProduct( member: ObjectId | null, id: string): Promise<Product> {
+     const productId = shapeIntoMongooseObjectId(id);
+
+     let result = await this.productModel
+     .findOne({
+      _id: productId,
+      productStatus: ProductStatus.PROCESS,
+     })
+     .exec();
+     if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+
+     // TODO:  if authenticated users => first => view log creation 
+
+
+     return result;
+     
+  }
 
   /** SSR **/
 
