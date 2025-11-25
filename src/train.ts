@@ -320,29 +320,52 @@ Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
 // tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
 
 
-function countOccurrences(obj: any, key: string): number {
-  let c = 0;
-  for (let k in obj) {
-    if (k === key) c++;
-    if (typeof obj[k] === "object") c += countOccurrences(obj[k], key);
-  }
-  return c;
-}
+// function countOccurrences(obj: any, key: string): number {
+//   let c = 0;
+//   for (let k in obj) {
+//     if (k === key) c++;
+//     if (typeof obj[k] === "object") c += countOccurrences(obj[k], key);
+//   }
+//   return c;
+// }
 
-console.log("result:",
-  countOccurrences(
-    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 }, maxSpeed: { model: 280} },
-    "model"
-  )
-);       
-
-
+// console.log("result:",
+//   countOccurrences(
+//     { model: "Bugatti", steer: { model: "HANKOOK", size: 30 }, maxSpeed: { model: 280} },
+//     "model"
+//   )
+// );       
 
 
+
+
+
+// TASK - Y !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// TASK Y
+
+// Shunday function yozing, uni 2'ta array parametri bo'lsin.
+// Bu function ikkala arrayda ham ishtirok etgan bir xil
+// qiymatlarni yagona arrayga joylab qaytarsin.
+
+// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+// Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+// o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+// ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+// joylab return qilmoqda.
    
 
 
+function findIntersection(a: number[], b: number[]) {
+  const j: number[] = [];
+  for (let i = 0; i < a.length; i++) {
+    if (b.includes(a[i])) j.push(a[i]);
+  }
+  return j;
+}
 
+console.log("result:",findIntersection([1,3,9,5,9,7,4], [1,9,23,9,4,])); 
 
+// result: [ 1, 9, 9, 4 ]
 
 
