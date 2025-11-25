@@ -126,12 +126,14 @@ console.log("Train ishga tushdi!");
 
 
 
+
 // TASK - M !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 // function getSquareNumbers(son: number[]) {
 //     return son.map(r => ({ number: r, square: r ** 2 }));
 // }
 // console.log("Javob:", JSON.stringify(getSquareNumbers([9, 5, 2, 4, 3, 7])));
+
 
 
 
@@ -146,9 +148,8 @@ console.log("Train ishga tushdi!");
 
 
 
+
 // TASK - O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 
 // function calculateSumOfNumbers(son: any[]): number {
 //     return son.reduce((sum, item) => 
@@ -160,8 +161,8 @@ console.log("Train ishga tushdi!");
 
 
 
-// TASK - P !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+// TASK - P !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 // function objectToArray(son: {a: number, b: number, c: number}) {
 //      return Object.entries(son)
@@ -175,8 +176,6 @@ console.log("Train ishga tushdi!");
 
 // TASK - Q !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-
 // function hasProperty (bir: object, ikki: string) {
 //    return  ikki in bir;
 // }
@@ -186,8 +185,8 @@ console.log("Train ishga tushdi!");
 
 
 
-// TASK - R !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+// TASK - R !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 // function calculate (son: string) {
 //        return son.split(/[^0-9]+/).filter(Boolean).map(Number).reduce((acc, num) => acc + num)
@@ -201,7 +200,6 @@ console.log("Train ishga tushdi!");
 
 // TASK - S !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
 // function missingNumber(a: number[]) {
 //   return (a.length + 1) * a.length / 2 - a.reduce((s, n) => s + n, 0);
 // }
@@ -214,8 +212,6 @@ console.log("Train ishga tushdi!");
 
 
 // TASK - T !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 /**TASK T
 
 Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
@@ -234,10 +230,10 @@ Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab
 
 
 
-// TASK - T !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 
+// TASK - U !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /**TASK U
 
 Shunday function tuzing, uni number parametri bo'lsin.
@@ -259,11 +255,9 @@ Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
 // console.log(sumOdds(22));  //  11
 
 
-// TASK - T !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-
-
+// TASK - V !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // TASK V
 
 // Shunday function yozing, uni string parametri bo'lsin.
@@ -297,9 +291,6 @@ Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
 
 
 // TASK - W !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
 
 // function chunkArray ( raqam: number[], uch: number) {
 //   const res: number[][] = [];

@@ -16,6 +16,21 @@ const authService = new AuthService();
 const memberController: T = {};
 
 
+memberController.getRestaurant = async  (req: Request, res: Response) => {
+     try {
+        console.log("getRestaurant");
+        const result = await memberService.getRestaurant();
+
+        res.status(HttpCode.OK).json(result);
+        
+    } catch(err) {
+        console.log("Error, getRestaurant", err);
+        if(err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.standart.code).json(Errors.standart)
+    }
+}
+
+
 memberController.Signup = async (req: Request, res: Response) => {
     try {
         console.log("Signup");
@@ -93,7 +108,7 @@ memberController.updateMember = async (req: ExtendedRequest, res: Response) => {
     try {
          console.log("updateMember");
        const input: MemberUpdateInput = req.body;
-       if(req.file) input.memberImage = req.file.path.replace(/\\/, "/");
+       if(req.file) input.memberImage = req.file.path.replace(/\\/g, "/");
        const result = await memberService.updateMember(req.member, input)
        res.status(HttpCode.OK).json(result);
     } catch(err) {
@@ -117,7 +132,7 @@ memberController.getTopUsers = async (req: Request, res: Response) => {
     }
 }
 
-
+                                         //Verify — tekshirmoq, tasdiqlamoq degani.
 memberController.verifyAuth = async (
     req: ExtendedRequest, res: Response, next: NextFunction) => {
     try {
@@ -125,8 +140,8 @@ memberController.verifyAuth = async (
         if(token) req.member = await authService.checkAuth(token);
         if(!req.member)
           throw new Errors(HttpCode.UNAUTHORIZED, Message.NOT_AUTENTICATED);
+       next();
        
-     next();
     } catch (err) {
      console.log("Error, verifyAuth", err);
        if(err instanceof Errors) res.status(err.code).json(err);

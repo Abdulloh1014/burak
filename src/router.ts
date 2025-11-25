@@ -6,6 +6,7 @@ import memberController from "./controllers/member_controller";
 import uploader from "./libs/utils/uploader";
 
 /** Member */
+router.get("/member/restaurant", memberController.getRestaurant);
 router.post("/member/login", memberController.Login);
 router.post("/member/signup", memberController.Signup);
 router.post(
@@ -29,6 +30,7 @@ router.get("/member/top-users", memberController.getTopUsers);
 
 
 /** Product */
+
 
 
 /** Order */
