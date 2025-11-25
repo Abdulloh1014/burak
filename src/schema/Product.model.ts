@@ -1,6 +1,6 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import { ProductStatus, ProductCollection, ProductSize, ProductVolume } from "../libs/enums/product.enum";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
 const productSchema = new Schema({
   productStatus: {
