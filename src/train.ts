@@ -356,16 +356,40 @@ Keyingi namunada ham xuddi shunday xolat takrorlanmoqda. */
    
 
 
-function findIntersection(a: number[], b: number[]) {
-  const j: number[] = [];
-  for (let i = 0; i < a.length; i++) {
-    if (b.includes(a[i])) j.push(a[i]);
-  }
-  return j;
+// function findIntersection(a: number[], b: number[]) {
+//   const j: number[] = [];
+//   for (let i = 0; i < a.length; i++) {
+//     if (b.includes(a[i])) j.push(a[i]);
+//   }
+//   return j;
+// }
+
+// console.log("result:",findIntersection([1,3,9,5,9,7,4], [1,9,23,9,4,])); 
+
+// // result: [ 1, 9, 9, 4 ]
+
+
+
+
+// TASK - Y !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/**TASK Z
+
+Shunday function yozing. Bu function sonlardan iborat array
+qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+sonlarni topib ularni yig'disini qaytarsin.
+
+MASALAN:
+sumEvens([1, 2, 3]); return 2;
+sumEvens([1, 2, 3, 2]); return 4;
+
+Yuqoridagi misolda, bizning funktsiya
+berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
+sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda. */
+
+function sumEvens(arr: number[]): number {
+  let s = 0;
+  for (const n of arr) if (n % 2 === 0) s += n;
+  return s;
 }
 
-console.log("result:",findIntersection([1,3,9,5,9,7,4], [1,9,23,9,4,])); 
-
-// result: [ 1, 9, 9, 4 ]
-
-
+console.log(sumEvens([8, 5, 2, 3, 4]));      
