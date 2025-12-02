@@ -32,13 +32,13 @@ class OrderService {
 
        
        try{
-         const newOrder: Order = await this.orderModel.create({
-            orderTotal: amount + delivery,
+         const newOrder: Order = await this.orderModel.create({   // yangi order hosil qilib beradi
+            orderTotal: amount + delivery,  
             orderDelivery: delivery,
             memberId: memberId,
          });
         
-         const orderId = newOrder._id;
+         const orderId = newOrder._id;       // yangi hosil bolgan order id
          console.log("orderId:", orderId);
         await this.recordOrderItem(orderId, input);
          return newOrder;

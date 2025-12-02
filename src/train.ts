@@ -386,10 +386,30 @@ Yuqoridagi misolda, bizning funktsiya
 berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
 sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda. */
 
-function sumEvens(arr: number[]): number {
-  let s = 0;
-  for (const n of arr) if (n % 2 === 0) s += n;
-  return s;
+// function sumEvens(arr: number[]): number {
+//   let s = 0;
+//   for (const n of arr) if (n % 2 === 0) s += n;
+//   return s;
+// }
+
+// console.log(sumEvens([8, 5, 2, 3, 4]));      
+
+
+
+
+
+// TASK - ZB !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/**TASK-ZB:
+
+Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar orasidan random raqam return qilsin
+
+MASALAN: randomBetween(30, 50) return 45 */
+
+
+function randomBetween(bir: number, ikki: number): number  {
+   return Math.floor(Math.random() * (ikki - bir + 1)) + bir;
 }
 
-console.log(sumEvens([8, 5, 2, 3, 4]));      
+
+console.log("result:", randomBetween(22, 44))
