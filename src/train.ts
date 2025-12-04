@@ -407,9 +407,37 @@ Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar ora
 MASALAN: randomBetween(30, 50) return 45 */
 
 
-function randomBetween(bir: number, ikki: number): number  {
-   return Math.floor(Math.random() * (ikki - bir + 1)) + bir;
+// function randomBetween(bir: number, ikki: number): number  {
+//    return Math.floor(Math.random() * (ikki - bir + 1)) + bir;
+// }
+
+
+// console.log("result:", randomBetween(22, 44))
+
+
+
+
+
+// TASK - ZC !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/**
+ * TASK ZC
+
+Selisy (°C) shkalasi bo'yicha raqam qabul qilib, uni
+Ferenhayt (°F) shkalisaga o'zgaritib beradigan function yozing.
+
+MASALAN: celsiusToFahrenheit(0) return 32;
+MASALAN: celsiusToFahrenheit(10) return 50;
+
+Yuqoridagi misolda, 0°C, 32°F'ga teng.
+Yoki 10 gradus Selsiy, 50 Farenhaytga teng.
+
+°C va °F => Tempraturani o'lchashda ishlatiladigan o'lchov birligi. */ 
+
+
+function celsiusToFahrenheit(c: number): number {
+  return c * 9 / 5 + 32;
 }
 
-
-console.log("result:", randomBetween(22, 44))
+console.log(celsiusToFahrenheit(7));   
+console.log(celsiusToFahrenheit(22));  
