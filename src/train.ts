@@ -429,6 +429,7 @@ Ferenhayt (°F) shkalisaga o'zgaritib beradigan function yozing.
 MASALAN: celsiusToFahrenheit(0) return 32;
 MASALAN: celsiusToFahrenheit(10) return 50;
 
+
 Yuqoridagi misolda, 0°C, 32°F'ga teng.
 Yoki 10 gradus Selsiy, 50 Farenhaytga teng.
 

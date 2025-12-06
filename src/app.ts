@@ -1,5 +1,7 @@
 // Backend
 
+
+import cors from "cors";
 import express from 'express';   // bu serverni quradi
 import path from 'path';   // path (Windows, Linux, macOS) yo‘l formatlari farq qiladi —path moduli bu farqlarni avtomatik hisobga olib, har joyda to‘g‘ri ishlaydigan yo‘l yaratadi.
 import router from "./router"
@@ -24,7 +26,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, "public")));   // `join()` — bir nechta yo‘l qismlarini (masalan, papka nomlari) bitta to‘liq yo‘lga birlashtiradi \\\ __dirname — joriy papka manzili  
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended: true}));   // Tradition API ga hizmat qiladi.     // urlencoded() — forma orqali kelgan ma’lumotlarni o‘qiydi  \\\ murakkab ma’lumotlarni ham o‘qishga imkon beradi  
-app.use(express.json());              // Rest. API. React API ga hizmat qiladi.         // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
+app.use(express.json());                                                   // Rest. API. React API ga hizmat qiladi.         // IPA sifatida req bo'layotgan datalarni bodysida kelyotgan json datani o'tkazishga ruhsat beryabmiz
+app.use(cors({credentials: true, origin: true,}));
 app.use(cookieParser());                 // kelayotgan requestdagi cookie’larni o‘qish uchun kerak.  //⚡ Express serveri cookie’larni o‘zi o‘qiy olmaydi.      
 app.use(morgan(MORGAN_FORMAT));     // formatini (metod, URL, vaqt va h.k.) ko‘rsatadi.       
 
