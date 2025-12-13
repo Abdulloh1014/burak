@@ -461,9 +461,33 @@ Bizning function uchinchi berilgan '2' raqamini shu '3' bilan almashtirib,
 yangilangan arrayni qaytarmoqda. */
 
 
-function changeNumberInArray(bir: number, ikki: number[], uch: number): any {
-    ikki[bir] = uch;
-    return ikki;
+// function changeNumberInArray(bir: number, ikki: number[], uch: number): any {
+//     ikki[bir] = uch;
+//     return ikki;
+// }
+
+// console.log("result:", changeNumberInArray(1, [1,3,7,2], 2))
+
+
+
+
+// TASK - ZD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/**
+ TASK-ZF:
+Shunday function yozing, uni string parametri bolsin. 
+String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin 
+lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
+
+MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
+ */
+
+function capitalizeWords(soz: string): string {
+   return soz
+    .split(' ')
+    .map(word => (word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word))
+    .join(' ');
 }
 
-console.log("result:", changeNumberInArray(1, [1,3,7,2], 2))
+ console.log(capitalizeWords('take it step by step')); // result: 'Take it Step by Step'
+ 
+ 
