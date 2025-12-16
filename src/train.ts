@@ -481,13 +481,30 @@ lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
 MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
  */
 
-function capitalizeWords(soz: string): string {
-   return soz
-    .split(' ')
-    .map(word => (word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word))
-    .join(' ');
-}
+// function capitalizeWords(soz: string): string {
+//    return soz
+//     .split(' ')
+//     .map(word => (word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word))
+//     .join(' ');
+// }
 
- console.log(capitalizeWords('take it step by step')); // result: 'Take it Step by Step'
+//  console.log("result:", capitalizeWords('take it step by step')); // result: 'Take it Step by Step'
  
- 
+//  const add = (): number => {
+//   return 2 + 2;
+// };
+
+// console.log(add())
+
+
+// TASK - ZG !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/**TASK-ZG:
+
+Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin. 
+MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string' */
+
+function capitalizeWords(soz: string): string {
+  return soz.trim().toLowerCase().replace(/\s+/g, "_");
+}
+console.log(capitalizeWords("name should be a string"));
