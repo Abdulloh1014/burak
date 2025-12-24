@@ -504,7 +504,35 @@ MASALAN: capitalizeWords('name should be a string') return 'Name Should be a Str
 Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin. 
 MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string' */
 
-function capitalizeWords(soz: string): string {
-  return soz.trim().toLowerCase().replace(/\s+/g, "_");
+// function capitalizeWords(soz: string): string {
+//   return soz.trim().toLowerCase().replace(/\s+/g, "_");
+// }
+// console.log(capitalizeWords("name should be a string"));
+
+
+
+
+
+// TASK - ZJ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/**TASK ZJ:
+
+Shunday function yozing, u berilgan array ichidagi
+raqamlarni qiymatini hisoblab qaytarsin.
+
+MASALAN: reduceNestedArray([1, [1, 2, [4]]]); return 8;
+
+Yuqoridagi misolda, array nested bo'lgan holdatda ham,
+bizning function ularning yig'indisini hisoblab qaytarmoqda. */
+
+
+function reduceNestedArray (bir: any[]): any {
+     const result = bir.flat(Infinity).reduce((a, b) => a + b, 0);
+     return result;
 }
-console.log(capitalizeWords("name should be a string"));
+
+console.log(reduceNestedArray([1, [1, 2, [4, [11, [22]]]]]))
+
+
+
+
