@@ -526,13 +526,35 @@ Yuqoridagi misolda, array nested bo'lgan holdatda ham,
 bizning function ularning yig'indisini hisoblab qaytarmoqda. */
 
 
-function reduceNestedArray (bir: any[]): any {
-     const result = bir.flat(Infinity).reduce((a, b) => a + b, 0);
-     return result;
+// function reduceNestedArray (bir: any[]): any {
+//      const result = bir.flat(Infinity).reduce((a, b) => a + b, 0);
+//      return result;
+// }
+
+// console.log(reduceNestedArray([1, [1, 2, [4, [11, [22]]]]]))
+
+
+
+
+
+// TASK - ZK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/**TASK-ZK:
+
+Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
+MASALAN: printNumbers() */
+
+
+let id = setInterval(function printNumbers(): any {
+for(let i = 1; i <= 5; i++){
+  console.log('number:', i)
 }
+   console.log("passed here")
+}, 1000);
 
-console.log(reduceNestedArray([1, [1, 2, [4, [11, [22]]]]]))
+setTimeout(() => {
+   clearInterval(id)
+}, 6000)
 
-
-
-
+/**setTimeout(function () {           //  ""setTimeout()"" funksiyasi JS.da ma’lum vaqt (millisekundlarda)  keyin berilgan funksiyani ishga tushiradi.    
+    console.log("Ishga tushdi");
+}, 5000); */
