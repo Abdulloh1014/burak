@@ -544,17 +544,34 @@ Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan
 MASALAN: printNumbers() */
 
 
-let id = setInterval(function printNumbers(): any {
-for(let i = 1; i <= 5; i++){
-  console.log('number:', i)
-}
-   console.log("passed here")
-}, 1000);
+// let id = setInterval(function printNumbers(): any {
+// for(let i = 1; i <= 5; i++){
+//   console.log('number:', i)
+// }
+//    console.log("passed here")
+// }, 1000);
 
-setTimeout(() => {
-   clearInterval(id)
-}, 6000)
+// setTimeout(() => {
+//    clearInterval(id)
+// }, 6000)
 
 /**setTimeout(function () {           //  ""setTimeout()"" funksiyasi JS.da ma’lum vaqt (millisekundlarda)  keyin berilgan funksiyani ishga tushiradi.    
     console.log("Ishga tushdi");
 }, 5000); */
+
+
+
+
+
+// TASK - ZL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/**
+ TASK-ZL:
+Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab” */
+
+function stringToKebab(kebab: String): any{
+   return kebab.trim().toLowerCase().replace(/\s+/g, "-");
+}
+
+console.log(stringToKebab('I love Kebab'))
