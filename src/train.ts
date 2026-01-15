@@ -593,8 +593,61 @@ Yuqoridagi misolda, function kiritilgan raqamlarni orqasiga
 o'girib (reverse) qilib qaytarmoqda. */
 
 
-function reverseInteger (raqam: number): number{
-      return parseInt(raqam.toString().split('').reverse().join(''))
+// function reverseInteger (raqam: number): number{
+//       return parseInt(raqam.toString().split('').reverse().join(''))
+// }
+
+// console.log("result: ",reverseInteger(123456789))
+
+
+
+
+
+
+
+// function areParenthesesBalanced(str: string): boolean {
+//   let balance = 0;
+
+//   for (const ch of str) {
+//     if (ch === '(') balance++;
+//     if (ch === ')') balance--;
+//     if (balance < 0) return false;
+//   }
+
+//   return balance === 0;
+// }
+
+
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda"))
+
+
+// TASK - ZQ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/**TASK ZQ:
+
+Shunday function yozing, u parametr sifatida string qabul qilsin.
+Va bu function string ichidagi so'zlarni teskari tartibda qaytarsin.
+
+MASALAN: reverseWordsInString("I love programming") return "programming love I"
+
+Yuqoridagi misolda, function kiritilgan string ichidagi so'zlarni
+teskari tartibda joylab qaytarmoqda. */
+
+
+
+
+// TASK - ZS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/**
+ * TASK ZS:
+
+Shunday function yozing, bu function parametrdagi array ichida
+bir marotaba takrorlangan element'ni qaytarsin
+
+MASALAN: singleNumber([4, 2, 1, 2, 1]); return 4;
+ */
+
+function singleNumber(raqam: number[]): number {
+   return raqam.filter(
+      x => raqam.indexOf(x) === raqam.lastIndexOf(x))[0];
 }
 
-console.log("result: ",reverseInteger(123456789))
+console.log(singleNumber([4, 2, 1, 2, 1]))
